@@ -18,7 +18,7 @@
 
   <!-- Frase principal -->
   <section class="frase-principal">
-    Dios nos ha concedido el privilegio de conocernos y amarnos.<br />
+    Dios nos ha concedido el privilegio de conocernos y amarnos.
     Y hoy con su bendición queremos unir nuestras vidas para siempre.
     <br><br />
     En compañía de nuestros padres
@@ -33,7 +33,7 @@
     <p class="nombres-familia">Locha Correa<br />Fidel Martínez</p>
 
     <br />
-    <p class="nombres-familia">Los invitamos a ser parte de este día tan especial</p>
+    <p class="nombres-familia">Los invitamos a ser parte de este día tan <br> especial</p>
   </section>
 
   <!-- Cuenta regresiva -->
@@ -70,23 +70,72 @@
       <div class="dias-mes">
         <div class="dia vacio"></div><div class="dia vacio"></div><div class="dia vacio"></div>
         <div class="dia vacio"></div><div class="dia vacio"></div><div class="dia vacio"></div>
-        <div class="dia">1</div><div class="dia">2</div><div class="dia">3</div>
-        <div class="dia">4</div><div class="dia">5</div><div class="dia">6</div>
-        <div class="dia">7</div><div class="dia">8</div><div class="dia">9</div>
-        <div class="dia">10</div><div class="dia">11</div><div class="dia">12</div>
-        <div class="dia">13</div><div class="dia">14</div><div class="dia especial">15</div>
+        <div class="dia">1</div>
+        <div class="dia">2</div><div class="dia">3</div><div class="dia">4</div>
+        <div class="dia">5</div><div class="dia">6</div><div class="dia">7</div>
+        <div class="dia">8</div><div class="dia">9</div><div class="dia">10</div>
+        <div class="dia">11</div><div class="dia">12</div><div class="dia">13</div>
+        <div class="dia">14</div><div class="dia dia-especial">15</div>
         <div class="dia">16</div><div class="dia">17</div><div class="dia">18</div>
         <div class="dia">19</div><div class="dia">20</div><div class="dia">21</div>
         <div class="dia">22</div><div class="dia">23</div><div class="dia">24</div>
         <div class="dia">25</div><div class="dia">26</div><div class="dia">27</div>
         <div class="dia">28</div><div class="dia">29</div><div class="dia">30</div>
-        <div class="dia vacio"></div><div class="dia vacio"></div><div class="dia vacio"></div>
-        <div class="dia vacio"></div><div class="dia vacio"></div><div class="dia vacio"></div>
       </div>
     </div>
   </section>
 
+  <!-- Nuestra historia + Carrusel -->
+  <section class="seccion-historia">
+    <p class="titulo-historia">Nuestra historia</p>
+    <p class="texto-historia">Comenzó cuando dos personas se encontraron y, en el otro, hallaron paz y un hogar para siempre</p>
+    <div class="carrusel">
+      <button class="btn-carrusel" onclick="cambiarFoto(-1)">&#10094;</button>
+      <img id="fotoCarrusel" src="foto1c.jpg" alt="Foto historia">
+      <button class="btn-carrusel" onclick="cambiarFoto(1)">&#10095;</button>
+    </div>
+  </section>
+
+
+    <!-- Ceremonia y Recepción -->
+  <section class="seccion-eventos">
+    <div class="evento">
+      <p class="titulo-evento">Ceremonia</p>
+      <a href="https://maps.app.goo.gl/v4q4as6cwv346AsT8" target="_blank">
+        <img src="UBICACION.png" alt="Ubicación ceremonia" class="icono-ubicacion">
+      </a>
+      <p class="hora-evento">3:30 pm</p>
+      <img src="IGLECIA.png" alt="Iglesia" class="icono-evento">
+    </div>
+    <div class="evento">
+      <p class="titulo-evento">Recepción</p>
+      <a href="https://maps.app.goo.gl/NaFuNmnQo8U5wyeU9" target="_blank">
+        <img src="UBICACION.png" alt="Ubicación recepción" class="icono-ubicacion">
+      </a>
+      <p class="hora-evento">5:00 pm</p>
+      <img src="COPAS.png" alt="Copas" class="icono-evento">
+    </div>
+  </section>
+
+
+  <section class="seccion-mensaje">
+    <p class="titulo-mensaje">Escribe un pensamiento para los novios </p>
+    <a href="https://forms.gle/7rDx9U5ZZ7oUYKdk8" target="_blank" class="btn-mensaje">Ir a Escribir...</a>
+  </section>
+
+
+    <!-- final de invitacion -->
+    <section class="seccion-final">
+
+        <p class="iniciales-final">S y C</p>
+        <p class="fecha-final">15 | 11 | 2025</p>
+    </section>
+
+
+
+
   <script>
+    // Cuenta regresiva
     const fechaBoda = new Date('2025-11-15T00:00:00');
     function actualizarCuenta() {
       const ahora = new Date();
@@ -106,8 +155,18 @@
     }
     setInterval(actualizarCuenta,1000);
     actualizarCuenta();
+
+    // Carrusel
+    const fotos = ["foto1c.jpg", "foto2c.jpg", "foto3c.jpg", "foto4c.jpg"];
+    let indice = 0;
+    function cambiarFoto(n) {
+      indice = (indice + n + fotos.length) % fotos.length;
+      document.getElementById('fotoCarrusel').src = fotos[indice];
+    }
   </script>
 
 </body>
 </html>
+
+
 
