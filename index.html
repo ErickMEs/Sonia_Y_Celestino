@@ -1,60 +1,113 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nuestra Boda</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Invitación de Boda</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <main>
-    <section id="hero">
-      <p class="titulo-boda">NUESTRA BODA</p>
-      <p class="nombres">Sonia y Celestino</p>
-    </section>
+  <!-- Portada -->
+  <section class="portada">
+    <div class="titulo-portada">NUESTRA BODA</div>
+    <div class="nombre">Sonia</div>
+    <div class="ampersand">&</div>
+    <div class="nombre">Celestino</div>
+  </section>
 
-    <section id="mensaje">
-      <p class="mensaje-texto">Dios nos ha concedido el privilegio de conocernos y amarnos, y hoy con su bendición queremos unir nuestras vidas para siempre.</p>
-      <p class="mensaje-texto">En compañía de nuestros padres</p>
+  <!-- Frase principal -->
+  <section class="frase-principal">
+    Dios nos ha concedido el privilegio de conocernos y amarnos.<br />
+    Y hoy con su bendición queremos unir nuestras vidas para siempre.
+    <br><br />
+    En compañía de nuestros padres
+  </section>
 
-      <div class="padres">
-        <h3 class="mensaje-padre-titulo">Padres de la novia</h3>
-        <p class="mensaje-padre-nombre">Rosario Morales Colin</p>
-        <p class="mensaje-padre-nombre">Antonio Escobar</p>
+  <!-- Padres -->
+  <section class="seccion-familia">
+    <div class="titulo-familia">Padres de la novia</div>
+    <p class="nombres-familia">Rosario Morales<br />Antonio Escobar</p>
+
+    <div class="titulo-familia">Padres del novio</div>
+    <p class="nombres-familia">Locha Correa<br />Fidel Martínez</p>
+
+    <br />
+    <p class="nombres-familia">Los invitamos a ser parte de este día tan especial</p>
+  </section>
+
+  <!-- Cuenta regresiva -->
+  <section class="cuenta-regresiva">
+    <div class="titulo-cuenta">Faltan</div>
+    <div class="contenedor-tiempo">
+      <div class="caja-tiempo">
+        <div class="numero" id="dias">--</div>
+        <div class="etiqueta">Días</div>
       </div>
-
-      <div class="padres">
-        <h3 class="mensaje-padre-titulo">Padres del novio</h3>
-        <p class="mensaje-padre-nombre">Eloiza Correa</p>
-        <p class="mensaje-padre-nombre">Fidel Martinez</p>
+      <div class="caja-tiempo">
+        <div class="numero" id="horas">--</div>
+        <div class="etiqueta">Horas</div>
       </div>
-
-      <p class="mensaje-texto">Los invitamos a ser parte de este día tan <br> especial</p>
-    </section>
-
-    <section id="contador">
-      <p class="contador-titulo">Faltan</p>
-      <div class="contador-numeros">
-        <span>90</span> <span>17</span> <span>16</span> <span>12</span>
+      <div class="caja-tiempo">
+        <div class="numero" id="minutos">--</div>
+        <div class="etiqueta">Min</div>
       </div>
-      <div class="contador-unidades">
-        <span>días</span> <span>horas</span> <span>min</span> <span>seg</span>
+      <div class="caja-tiempo">
+        <div class="numero" id="segundos">--</div>
+        <div class="etiqueta">Seg</div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="calendario">
-      <p class="calendario-texto">El gran día</p>
-      <p class="calendario-texto">---Calendario---</p>
-    </section>
-    
-    <section id="final">
-      <p class="final-texto">Nuestra Boda</p>
-    </section>
-  </main>
+  <!-- Calendario -->
+  <section class="seccion-calendario">
+    <div class="titulo-calendario">El gran día</div>
+    <div class="mes-calendario">Noviembre</div>
+    <div class="contenedor-calendario">
+      <div class="dias-semana">
+        <div>DO</div><div>LU</div><div>MA</div><div>MI</div><div>JU</div><div>VI</div><div>SA</div>
+      </div>
+      <div class="dias-mes">
+        <div class="dia vacio"></div><div class="dia vacio"></div><div class="dia vacio"></div>
+        <div class="dia vacio"></div><div class="dia vacio"></div><div class="dia vacio"></div>
+        <div class="dia">1</div><div class="dia">2</div><div class="dia">3</div>
+        <div class="dia">4</div><div class="dia">5</div><div class="dia">6</div>
+        <div class="dia">7</div><div class="dia">8</div><div class="dia">9</div>
+        <div class="dia">10</div><div class="dia">11</div><div class="dia">12</div>
+        <div class="dia">13</div><div class="dia">14</div><div class="dia especial">15</div>
+        <div class="dia">16</div><div class="dia">17</div><div class="dia">18</div>
+        <div class="dia">19</div><div class="dia">20</div><div class="dia">21</div>
+        <div class="dia">22</div><div class="dia">23</div><div class="dia">24</div>
+        <div class="dia">25</div><div class="dia">26</div><div class="dia">27</div>
+        <div class="dia">28</div><div class="dia">29</div><div class="dia">30</div>
+        <div class="dia vacio"></div><div class="dia vacio"></div><div class="dia vacio"></div>
+        <div class="dia vacio"></div><div class="dia vacio"></div><div class="dia vacio"></div>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    <p>Pie de página © 2025</p>
-  </footer>
+  <script>
+    const fechaBoda = new Date('2025-11-15T00:00:00');
+    function actualizarCuenta() {
+      const ahora = new Date();
+      let diferencia = fechaBoda - ahora;
+      if (diferencia < 0) diferencia = 0;
+      const dias = Math.floor(diferencia / (1000*60*60*24));
+      diferencia -= dias * (1000*60*60*24);
+      const horas = Math.floor(diferencia / (1000*60*60));
+      diferencia -= horas * (1000*60*60);
+      const minutos = Math.floor(diferencia / (1000*60));
+      diferencia -= minutos * (1000*60);
+      const segundos = Math.floor(diferencia / 1000);
+      document.getElementById('dias').textContent = dias;
+      document.getElementById('horas').textContent = horas.toString().padStart(2,'0');
+      document.getElementById('minutos').textContent = minutos.toString().padStart(2,'0');
+      document.getElementById('segundos').textContent = segundos.toString().padStart(2,'0');
+    }
+    setInterval(actualizarCuenta,1000);
+    actualizarCuenta();
+  </script>
+
 </body>
 </html>
+
