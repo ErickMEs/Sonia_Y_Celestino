@@ -3,28 +3,23 @@
   font-family: 'Mea Culpa';
   src: url('./fonts/MeaCulpa-Regular.ttf') format('truetype');
 }
-
 @font-face {
   font-family: 'Abhaya Libre';
   src: url('./fonts/AbhayaLibre-Regular.ttf') format('truetype');
 }
 
-/* --------------------- RESETEO Y BASE --------------------- */
-* {
-  box-sizing: border-box;
-}
-
+/* --------------------- BASE --------------------- */
+* { box-sizing: border-box; }
 body {
   margin: 0;
   padding: 0;
-  background-color: #fff;
+  background: #fff;
   font-family: 'Abhaya Libre', serif;
   color: #333;
 }
 
 /* --------------------- PORTADA --------------------- */
 .portada {
-  position: relative;
   width: 100%;
   height: 100vh;
   background: url('imagen1.jpg') no-repeat center center/cover;
@@ -34,37 +29,9 @@ body {
   align-items: center;
   text-align: center;
 }
-
-.portada::before {
-  content: '';
-  position: absolute;
-  top: 0; bottom: 0; left: 0; right: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.5) 100%);
-  z-index: 1;
-}
-
-.portada > * {
-  position: relative;
-  z-index: 2;
-}
-
-.titulo-portada {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: white;
-}
-
-.nombre {
-  font-family: 'Mea Culpa', cursive;
-  font-size: 6rem;
-  margin: 10px 0;
-  color: white;
-}
-
-.ampersand {
-  font-size: 4rem;
-  color: white;
-}
+.titulo-portada { font-size: 2rem; margin-bottom: 40px; color: white; }
+.nombre { font-family: 'Mea Culpa', cursive; font-size: 6rem; margin: 10px 0; color: white; }
+.ampersand { font-size: 4rem; color: white; }
 
 /* --------------------- FRASE --------------------- */
 .frase-principal {
@@ -83,17 +50,12 @@ body {
   text-align: center;
   padding: 0 15px;
 }
-
 .titulo-familia {
   font-family: 'Mea Culpa', cursive;
   font-size: 3rem;
   margin: 20px 0 10px;
 }
-
-.nombres-familia {
-  font-size: 20px;
-  margin: 0;
-}
+.nombres-familia { font-size: 20px; margin-top: 10px; }
 
 /* --------------------- CUENTA REGRESIVA --------------------- */
 .cuenta-regresiva {
@@ -102,34 +64,20 @@ body {
   text-align: center;
   padding: 60px 20px;
 }
-
 .titulo-cuenta {
   font-family: 'Mea Culpa', cursive;
   font-size: 4rem;
   margin-bottom: 30px;
 }
-
 .contenedor-tiempo {
   display: flex;
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
 }
-
-.caja-tiempo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.numero {
-  font-size: 3rem;
-}
-
-.etiqueta {
-  font-size: 1.2rem;
-  margin-top: 5px;
-}
+.caja-tiempo { display: flex; flex-direction: column; align-items: center; }
+.numero { font-size: 3rem; }
+.etiqueta { font-size: 1.2rem; margin-top: 5px; }
 
 /* --------------------- CALENDARIO --------------------- */
 .seccion-calendario {
@@ -138,74 +86,190 @@ body {
   text-align: center;
   padding: 0 15px;
 }
-
 .titulo-calendario {
   font-family: 'Mea Culpa', cursive;
   font-size: 4rem;
   margin-bottom: 30px;
 }
-
-.mes-calendario {
-  font-size: 2rem;
-  margin-bottom: 15px;
-}
-
+.mes-calendario { font-size: 2rem; margin-bottom: 15px; }
 .contenedor-calendario {
   border-top: 1px solid #333;
   border-bottom: 1px solid #333;
   display: inline-block;
-  text-align: center;
   padding: 10px 0;
-  user-select: none;
 }
-
 .dias-semana, .dias-mes {
   display: grid;
   grid-template-columns: repeat(7, 40px);
   justify-content: center;
+  gap: 5px;
 }
-
 .dias-semana {
   font-weight: bold;
   font-size: 1rem;
+  letter-spacing: 0.1em;
 }
-
-.dias-mes {
-  font-size: 1.1rem;
-  gap: 5px;
-}
-
 .dia {
   text-align: center;
   line-height: 40px;
   height: 40px;
   width: 40px;
 }
+.dia.vacio { background: transparent; }
+.dia-especial { color: #fc0000; font-weight: bold; }
 
-.dia.vacio {
-  background: transparent;
+/* --------------------- HISTORIA + CARRUSEL --------------------- */
+.seccion-historia {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 0 15px;
+  position: relative; /* importante para posicionar los botones */
+}
+.titulo-historia {
+  font-family: 'Mea Culpa', cursive;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.texto-historia {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.carrusel {
+  position: relative; /* para que los botones se posicionen sobre el carrusel */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carrusel img {
+  max-width: 100%;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
 }
 
-.dia.especial {
-  color: #fc0000;
-  font-weight: bold;
-  position: relative;
-}
-
-.dia.especial::before {
-  content: '';
+/* Botones del carrusel */
+.btn-carrusel {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 36px;
-  height: 32px;
-  border: 2px solid red;
-  border-radius: 50%;
-  pointer-events: none;
-  background: transparent;
-  z-index: -1;
+  transform: translateY(-50%);
+  background: none;        /* sin color de fondo */
+  border: none;
+  color: black;            /* flechita negra */
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding: 0 12px;
+  user-select: none;
 }
+.btn-carrusel:hover {
+  color: #555;             /* un tono gris suave al pasar el mouse */
+}
+
+.btn-carrusel:first-of-type { left: 0; }
+.btn-carrusel:last-of-type { right: 0; }
+
+/* --------------------- CEREMONIA Y RECEPCIÓN --------------------- */
+.seccion-eventos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  background-color: rgb(247, 247, 247);
+}
+
+.evento {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.titulo-evento {
+  font-family: 'Mea Culpa', cursive;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.icono-ubicacion {
+  width: 40px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.hora-evento {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.icono-evento {
+  width: 80px;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+/* --------------------- SECCION FINAL --------------------- */
+.seccion-final {
+  position: relative;
+  background: url('imagen1.jpg') no-repeat center center/cover;
+  height: 100vh;                 /* ocupa todo el alto de la pantalla */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  justify-content:center;   /* coloca el contenido arriba */
+  padding-top: 40px;             /* separa un poco del borde superior */
+  color: white;
+  text-align: center;
+}
+
+.iniciales-final {
+  font-family: 'Mea Culpa', cursive;
+  font-size: 6rem;               /* ajusta según tu gusto */
+  margin: 0;
+}
+
+.fecha-final {
+  font-family: 'Abhaya Libre', serif;
+  font-size: 2rem;               /* ajusta según tu gusto */
+  margin: 10px 0 0 0;
+}
+
+
+
+/* --------------------- SECCION MENSAJE --------------------- */
+
+.seccion-mensaje {
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 0 15px;
+}
+
+.titulo-mensaje {
+  font-family: 'Mea Culpa', cursive;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.btn-mensaje {
+  display: inline-block;
+  background-color: #f8c8dc;
+  color: white;
+  font-size: 1.2rem;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn-mensaje:hover {
+  background-color: #e0a9c0;
+}
+
+
+
+
+
+
+
 
 /* --------------------- RESPONSIVE --------------------- */
 @media (max-width: 600px) {
@@ -218,7 +282,18 @@ body {
   .etiqueta { font-size: 1rem; }
   .titulo-calendario { font-size: 3rem; }
   .mes-calendario { font-size: 1.5rem; }
+  .titulo-historia { font-size: 2.5rem; }
+
+  .titulo-historia { font-size: 2.5rem; }
+  .carrusel img { max-height: 250px; }
+  .btn-carrusel { font-size: 2rem; }
+
+  .titulo-evento { font-size: 3rem; }
+  .icono-evento { width: 60px; }
+  .icono-ubicacion { width: 35px; }
+  .hora-evento { font-size: 1.5rem; }
 }
+
 
 
 main {
