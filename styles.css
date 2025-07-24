@@ -217,13 +217,12 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
-  background-color: rgb(247, 247, 247);
+  background-color: rgb(255, 255, 255);
 }
 
 .evento {
     margin-left: 15px;
     margin-right: 15px;
-    background-color:#fc0000;
 }
 .titulo-evento {
   font-family: 'Mea Culpa', cursive;
@@ -232,12 +231,17 @@ body {
 }
 .icono-ubicacion {
   width: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   margin-top: 10px;
 }
 .hora-evento {
   font-size: 1.5rem;
   margin-bottom: 10px;
+}
+
+.hora-evento-nombre{
+  font-size: 1.2rem;
+  margin-bottom: 5px;
 }
 .icono-evento {
   width: 80px;
@@ -335,4 +339,3 @@ body {
   .icono-ubicacion { width: 35px; }
   .hora-evento { font-size: 1.5rem; }
 }
-
