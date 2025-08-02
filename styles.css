@@ -264,7 +264,7 @@ body {
 /* --------------------- SECCION FINAL --------------------- */
 .seccion-final {
   position: relative;
-  background: url('imagen1-1.jpg') no-repeat center center/cover;
+  background: url('imagen111.jpg') no-repeat center center/cover;
   height: 100vh;                 /* ocupa todo el alto de la pantalla */
   width: 100%;
   display: flex;
@@ -350,5 +350,6 @@ body {
   .icono-ubicacion { width: 35px; }
   .hora-evento { font-size: 1.5rem; }
 }
+
 
 
