@@ -29,7 +29,7 @@ body {
   align-items: center;
   text-align: center;
 }
-.titulo-portada { font-size: 2rem; margin-bottom: 40px; color: white; }
+.titulo-portada { font-size: 2rem; margin-bottom: 180px; color: white; }
 .nombre { font-family: 'Mea Culpa', cursive; font-size: 6rem; margin: 10px 0; color: white; }
 .ampersand { font-size: 4rem; color: white; }
 
@@ -190,6 +190,17 @@ body {
   border-radius: 10px;
   object-fit: contain;
 }
+.icono-ubicacion {
+  width: 40px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  filter: drop-shadow(2px 2px 4px rgba(188, 188, 188, 0.4)); /* sombra sutil */
+  transition: transform 0.2s ease;
+}
+
+.icono-ubicacion:hover {
+  transform: scale(1.1); /* pequeño efecto al pasar el mouse */
+}
 
 /* Botones del carrusel */
 .btn-carrusel {
@@ -253,29 +264,28 @@ body {
 /* --------------------- SECCION FINAL --------------------- */
 .seccion-final {
   position: relative;
-  background: url('imagen1.jpg') no-repeat center center/cover;
+  background: url('imagen1-1.jpg') no-repeat center center/cover;
   height: 100vh;                 /* ocupa todo el alto de la pantalla */
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
-  justify-content:center;   /* coloca el contenido arriba */
-  padding-top: 40px;             /* separa un poco del borde superior */
-  color: white;
+  justify-content: flex-start;
+  padding-top: 80px; /* prueba con más o menos según el resultado */
+  color: rgb(255, 255, 255);
   text-align: center;
 }
 
 .iniciales-final {
   font-family: 'Mea Culpa', cursive;
   font-size: 6rem;               /* ajusta según tu gusto */
-  margin: 0;
+ 
 }
 
 .fecha-final {
   font-family: 'Abhaya Libre', serif;
   font-size: 2rem;               /* ajusta según tu gusto */
-  margin: 10px 0 0 0;
+  margin-top: 70px;
 }
 
 
@@ -303,13 +313,14 @@ body {
   padding: 12px 25px;
   border-radius: 8px;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* nueva sombra */
 }
 
 .btn-mensaje:hover {
   background-color: #e0a9c0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4); /* sombra más intensa al pasar el mouse */
 }
-
 
 
 
@@ -339,3 +350,5 @@ body {
   .icono-ubicacion { width: 35px; }
   .hora-evento { font-size: 1.5rem; }
 }
+
+
